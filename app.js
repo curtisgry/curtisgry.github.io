@@ -132,7 +132,7 @@ function showCorrectAns(items, selected) {
             }
         }
     } else {
-        resetSelected(radios)
+        // resetSelected(radios)
         for (let i = 0; i < items.length; i++) {
             if (items[i].innerText === correctAnswer) {
                 items[i].classList.add('correct')
