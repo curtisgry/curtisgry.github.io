@@ -125,7 +125,7 @@ function showCorrectAns(items, selected) {
     if (currentSelectTxt !== correctAnswer) {
         resetSelected(radios)
         for (let i = 0; i < items.length; i++) {
-            if (items[i].innerText === correctAnswer) {
+            if (items[i].firstElementChild.innerText === correctAnswer) {
                 items[i].classList.add('correct')
             } else {
                 items[i].classList.add('incorrect')
