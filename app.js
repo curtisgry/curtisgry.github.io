@@ -120,20 +120,37 @@ function checkSelected(radBtns) {
     }
 }
 
-function showCorrectAns(items) {
-    for (let item of items) {
-        if (item.innerText === correctAnswer) {
-            item.classList.add('text-success')
-        } else {
-            item.classList.add('text-danger')
+function showCorrectAns(items, selected) {
+    const currentSelectTxt = selected.innerText
+    if (currentSelectTxt !== correctAnswer) {
+        resetSelected(radios)
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].innerText === correctAnswer) {
+                items[i].classList.add('correct')
+            } else {
+                items[i].classList.add('incorrect')
+            }
         }
+    } else {
+        resetSelected(radios)
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].innerText === correctAnswer) {
+                items[i].classList.add('correct')
+            } else {
+                items[i].classList.add('incorrect')
+            }
+        }
+
     }
 }
 
+
+
+
 function resetColors(items) {
     for (let item of items) {
-        item.classList.remove('text-danger')
-        item.classList.remove('text-success')
+        item.classList.remove('incorrect')
+        item.classList.remove('correct')
     }
 }
 
@@ -156,24 +173,22 @@ submitBtn.addEventListener('click', function (e) {
             outcome.innerText = 'You got it!'
             outcome.classList.add('outcome')
             flashOutcome();
-            showCorrectAns(allAnswers)
+            showCorrectAns(allAnswers, selectedLabel)
             scoreValue += 1;
             console.log(scoreValue)
             score.innerText = scoreValue;
-            resetSelected(radios)
             setTimeout(getData, 2500)
         } else {
             outcome.innerText = ''
             outcome.classList.add('outcome')
             outcome.innerText = 'Thats not it..'
             flashOutcome();
-            showCorrectAns(allAnswers)
+            showCorrectAns(allAnswers, selectedLabel)
             if (scoreValue > 0) {
                 scoreValue -= 1;
             }
             console.log(scoreValue)
             score.innerText = scoreValue;
-            resetSelected(radios)
             setTimeout(getData, 2500)
         }
     }

@@ -72,46 +72,56 @@
 
                         <br>
 
-                        <button class="qbtn btn btn-lg btn-primary btn-block" type="submit" data-bs-toggle="collapse"
+                        <button class="qbtn btn btn-lg custom-btn btn-block" type="submit" data-bs-toggle="collapse"
                             data-bs-target="#collapseMe">Start!</button>
-                        <button class="reset-btn btn btn-lg btn-danger btn-block" type="submit">Reset</button>
+                        <button class="reset-btn btn btn-lg btn-reset btn-block" type="submit">Reset</button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="question-container w-100 hide">
             <div class="card question">
-                <div class="card-body">
+                <div class="card-body w-100">
                     <h2 class="card-title qcategory text-decoration-underline text-muted pb-2">Category</h2>
                     <h3 class="question">Question</h3>
                     <form class="flex" action="submit">
-                        <div class="flex-item">
-                            <input id="a" value="a" name="q" type="radio">
-                            <label class="ans" for="a"></label>
-                        </div>
-                        <div class="flex-item">
-                            <input id="b" value="b" name="q" type="radio">
-                            <label class="ans" for="b"></label>
-                        </div>
-                        <div class="flex-item">
-                            <input id="c" value="c" name="q" type="radio">
-                            <label class="ans" for="c"></label>
-                        </div>
-                        <div class="flex-item">
-                            <input id="d" value="d" name="q" type="radio">
-                            <label class="ans" for="d"></label>
+                        <div class="">
+                            <div class=" flex-item">
+                                <input class="radios" id="a" value="a" name="q" type="radio">
+                                <label class="btn ans" for="a">
+                                    <p>Test</p>
+                                </label>
+                            </div>
+                            <div class="flex-item">
+                                <input class="radios" id="b" value="b" name="q" type="radio">
+                                <label class="btn ans" for="b">
+                                    <p>long answer Test long answer</p>
+                                </label>
+                            </div>
+                            <div class="flex-item">
+                                <input class="radios" id="c" value="c" name="q" type="radio">
+                                <label class="btn ans" for="c">
+                                    <p>TestTest long answer</p>
+                                </label>
+                            </div>
+                            <div class="flex-item">
+                                <input class="radios" id="d" value="d" name="q" type="radio">
+                                <label class="btn ans" for="d">
+                                    <p>TestTest long answer</p>
+                                </label>
+                            </div>
                         </div>
 
-                        <button class="btn btn-primary sub-btn" type="submit">Check Answer</button>
+
+                        <button class="btn custom-btn sub-btn" type="submit">Check Answer</button>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
-    <footer class="footer">
-        <p>Made using <a href="https://opentdb.com/">Open Trivia</a> API</p>
-    </footer>
-    <script src="app.js"></script>
+        <footer class="footer">
+            <p>Made using <a href="https://opentdb.com/">Open Trivia</a></p>
+        </footer>
+        <script src="app.js"></script>
 </body>
 
 </html>

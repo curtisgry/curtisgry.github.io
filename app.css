@@ -8,6 +8,7 @@
   display: inline;
 }
 
+
 .card-header .bi {
   transition: 0.3s transform ease-in-out;
 }
@@ -47,26 +48,66 @@
   content: "Score: ";
 }
 
-.flex div {
-  padding: 12px;
-}
 
 .flex button {
   margin-top: 20px;
   margin-bottom: 30px;
 }
 
-.ans {
+.flex-item {
+  padding: 12px;
   width: fit-content;
+  flex-grow: 1;
+}
+
+.ans {
+  width: 100%;
+  min-width: 500px;
+  background-color: #EFF0D1;
+  color: #262730;
+}
+ .ans p {
+   margin: 0;
+   padding: 0;
+ }
+
+ 
+
+ .correct {
+   background-color: #77BA99;
+ }
+ .incorrect {
+  background-color: #D33F49;
+  color: white;
+}
+
+.radios {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radios:checked + label {
+  background-color: #77BA99;
+}
+
+.radios:focus + label {
+  background-color: #77BA99;
+  border: 1px solid #262730;
+}
+
+.custom-btn {
+  color: #fff;
+  background-color: #262730;
 }
 
 body {
   height: 100vh;
   background-image: linear-gradient(
     90deg,
-    #020024 0%,
-    #090979 35%,
-    #00d4ff 100%
+    #262730 0%,
+    #77BA99 35%,
+    #EFF0D1 100%
   );
 }
 
@@ -84,6 +125,10 @@ body {
 .fade-out {
   animation: fadeOut ease 1s;
   animation-fill-mode: forwards;
+}
+
+.btn:hover {
+  background-color: #D7C0D0;
 }
 
 @keyframes fadeOut {
@@ -108,7 +153,14 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+.footer {
+  color: #fff;
+  position: relative;
+  bottom: 0;
+}
+
+
+@media (max-width: 992px) {
   .score {
     font-size: 30px;
     right: 20px;
@@ -117,11 +169,29 @@ body {
   .outcome {
     display: none;
   }
+
+  .ans {
+    min-width: 150px;
+  }
+
+  .ans p {
+    margin: 0 auto;
+  }
+  /* .ans-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  } */
+}
+@media (max-width: 350px) {
+  .score {
+    font-size: 20px;
+    right: 20px;
+    bottom: 40px;
+  }
+  .ans p {
+    font-size: 14px;
+  }
+
 }
 
-.footer {
-  color: #fff;
-  position: fixed;
-  bottom: 0;
-  left: 20px;
-}
